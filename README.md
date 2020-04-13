@@ -16,7 +16,7 @@ Supervisor:
 -   Carl Herrmann
     ([carl.herrmann@uni-heidelberg.de](mailto:carl.herrmann@bioquant.uni-heidelberg.de))
 -   Ashwini Sharma
-    ([ashwini.sharma@uni-heidelberg.de](mailto:ashwini.sharma@bioquant.uni-heidelberg.de))
+    ([ashwini.sharma@bioquant.uni-heidelberg.de](mailto:ashwini.sharma@bioquant.uni-heidelberg.de))
 
 Tutor:
 
