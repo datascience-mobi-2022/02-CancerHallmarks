@@ -78,57 +78,49 @@ All these analysis steps should be summarized in a R markdown document, with app
 Description of datasets
 -----------------------
 
-We have provided a R list object (as a .RDS file). You can find the data
-using this link: [https://figshare.com/s/caa3448439fcf6032df4](https://figshare.com/s/caa3448439fcf6032df4)
+We have stored 3 datasets onto a public platform, figshare. These datasets represent
 
 
-Once you have downloaded it, load it as below:
+
+1. a data frame containing the **gene expression data from RNA-seq** for almost 10,000 TCGA cancer patients, representing 33 different tumor types; you can download the R-object `tcga_tumor_log2TPM.RDS` (beware, almost 1 Gb!) using this link: [https://figshare.com/s/3c2bf4d766181a17a2e0](https://figshare.com/s/3c2bf4d766181a17a2e0)
+
+2. a data frame with **37 clinical annotations** for all TCGA samples present in the full data matrix; you can download the R-object `tcga_tumor_annotation.RDS` using this link : [https://figshare.com/s/eed44ff6fdcf451cebd9](https://figshare.com/s/eed44ff6fdcf451cebd9)
+
+3. a R object containing, for 5 tumor types, the expression data of matched tumor and normal tissue; you can download this object `tcga_tumor_normal_datascience_proj_2020.RDS` using this link
+
+
+Once you have downloaded these 3 files, load them as below:
 
 ``` {.r}
-allDepMapData = readRDS("path/to/your/directory/DepMap19Q1_allData.RDS")
-names(allDepMapData)
-[1] "expression" "copynumber" "mutation"   "kd.ceres"   "kd.prob"    "annotation"
+tcga_exp = readRDS("path/to/your/directory/tcga_tumor_log2TPM.RDS")
+tcga_annot = readRDS("path/to/your/directory/tcga_tumor_annotation.RDS")
+tcga_tumor_norm = readRDS("path/to/your/directory/tcga_tumor_normal_datascience_proj_2020.RDS")
 ```
+The first 2 objects are data frames
 
-The list named as `allDepMapData` consists of the following matrices -
+```{.r}
+dim(tcga_exp)
+[1] 60498  9741
+ 
+dim(tcga_annot)
+[1] 9741   37
+```
+The third object is a list with 5 entries corresponding to 5 tumor types (BRCA = breast cancer; KIRC = kidney renal carcinoma; LUAD = lung adenocarcinoma; PRAD = prostate adenocarcinoma; THCA = Thyroid carcinoma); each entry of the list is itself a list with 3 entries, corresponding to (1) a data frame with expression values for tumor samples, (2) a data frame with expression values for normal samples from the same patients, (3) a data frame with clinical annotations for these patients.
 
--   Gene expression
-    -   This matrix consist of gene
-        [TPM](https://www.rna-seqblog.com/rpkm-fpkm-and-tpm-clearly-explained/)
-        (transcripts per million) values. These values reflect the level
-        of gene expression, higher values suggests over expression of
-        genes and vice versa. The rows of this matrix are the gene names
-        and the columns are the cancer cell line identifiers.
--   Gene copy number
-    -   This matrix consist of gene copy number (CN) values. In absolute
-        terms, CN = 2, since there are two alleles per genes. In cancer,
-        genes might be amplified CN \> 2 or deleted CN \< 2. These
-        values reflect the copy number level per gene, higher values
-        means amplification of genes and vice versa. The rows of this
-        matrix are the gene names and the columns are the cancer cell
-        line identifiers.
--   Gene mutations
-    -   Is the annotation file for the various mutations observed in a
-        sample. The `isDeleterious` flag specifies if mutation has a
-        functional effect or not.
--   Gene knockdown (CERES)
-    -   This matrix consist of gene knockdown scores. The score is a
-        measure of how essential/important is a particular gene for the
-        cell survival. This score reflects whether upon knocking down
-        that genes does the cell reduce its proliferation or increases
-        it or has no change. Smaller values refers to higher
-        essentiality. The rows of this matrix are the gene names and the
-        columns are the cancer cell line identifiers.
--   Gene knockdown (Probability)
-    -   The probability value for the effect of the gene knockdown. A
-        higher probability signifies that knocking down that particular
-        gene very likely reduces cell proliferation.
--   Annotation
-    -   This matrix gives information regarding the cell lines. The
-        `DepMap_ID` provides the uniform cell line identifiers used in
-        all the data sets below. The `CCLE_Name` is encoded as *cell
-        line name* \_ *Tissue of origin*. The columns `Primary.Disease`
-        and `Subtype.Disease` refers to the tissue/tumor of origin.
+Hence, if you want to access the expression matrix for tumor samples and normal sample for LUAD for example, you can do it through:
+
+```{.r}
+luad = tcga_tumor_norm[["LUAD"]]
+luad.tumor = luad[["tumor"]]
+luad.norm = luad[["normal"]]
+luad.annot = luad[["clinical"]]
+dim(luad.tumor)
+[1] 19624    58
+dim(luad.norm)
+[1] 19624    58
+dim(luad.annot)
+[1] 58 37
+```
 
 Literature review
 -----------------
