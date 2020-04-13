@@ -138,13 +138,13 @@ This list is meant as a **starting point** for your literature research; you sho
 - **RAS signalling Cancer -** Way, Gregory P., Francisco Sanchez-Vega, Konnor La, Joshua Armenia, Walid K. Chatila, Augustin Luna, Chris Sander et al. "Machine learning detects pan-cancer ras pathway activation in the cancer genome atlas." Cell reports 23, no. 1 (2018): 172-180. https://doi.org/10.1016/j.celrep.2018.03.046
 
 #### How to score pathways ?
-Dugourd, Aurelien, and Julio Saez-Rodriguez. "Footprint-based functional analysis of multiomic data." Current Opinion in Systems Biology 15 (2019): 82-90. https://doi.org/10.1016/j.coisb.2019.04.002
+- Dugourd, Aurelien, and Julio Saez-Rodriguez. "Footprint-based functional analysis of multiomic data." Current Opinion in Systems Biology 15 (2019): 82-90. https://doi.org/10.1016/j.coisb.2019.04.002
 
-Reimand, Jüri, Ruth Isserlin, Veronique Voisin, Mike Kucera, Christian Tannus-Lopes, Asha Rostamianfar, Lina Wadi et al. "Pathway enrichment analysis and visualization of omics data using g: Profiler, GSEA, Cytoscape and EnrichmentMap." Nature protocols 14, no. 2 (2019): 482-517. https://doi.org/10.1038/s41596-018-0103-9
+- Reimand, Jüri, Ruth Isserlin, Veronique Voisin, Mike Kucera, Christian Tannus-Lopes, Asha Rostamianfar, Lina Wadi et al. "Pathway enrichment analysis and visualization of omics data using g: Profiler, GSEA, Cytoscape and EnrichmentMap." Nature protocols 14, no. 2 (2019): 482-517. https://doi.org/10.1038/s41596-018-0103-9
 
-Paczkowska, Marta, Jonathan Barenboim, Nardnisa Sintupisut, Natalie S. Fox, Helen Zhu, Diala Abd-Rabbo, Miles W. Mee, Paul C. Boutros, and Jüri Reimand. "Integrative pathway enrichment analysis of multivariate omics data." Nature communications 11, no. 1 (2020): 1-16. https://doi.org/10.1038/s41467-019-13983-9
+- Paczkowska, Marta, Jonathan Barenboim, Nardnisa Sintupisut, Natalie S. Fox, Helen Zhu, Diala Abd-Rabbo, Miles W. Mee, Paul C. Boutros, and Jüri Reimand. "Integrative pathway enrichment analysis of multivariate omics data." Nature communications 11, no. 1 (2020): 1-16. https://doi.org/10.1038/s41467-019-13983-9
 
-Jia, Dongya, Mingyang Lu, Kwang Hwa Jung, Jun Hyoung Park, Linglin Yu, José N. Onuchic, Benny Abraham Kaipparettu, and Herbert Levine. "Elucidating cancer metabolic plasticity by coupling gene regulation with metabolic pathways." Proceedings of the National Academy of Sciences 116, no. 9 (2019): 3909-3918. https://doi.org/10.1073/pnas.1816391116
+- Jia, Dongya, Mingyang Lu, Kwang Hwa Jung, Jun Hyoung Park, Linglin Yu, José N. Onuchic, Benny Abraham Kaipparettu, and Herbert Levine. "Elucidating cancer metabolic plasticity by coupling gene regulation with metabolic pathways." Proceedings of the National Academy of Sciences 116, no. 9 (2019): 3909-3918. https://doi.org/10.1073/pnas.1816391116
 
 How to structure your project
 -----------------------------
