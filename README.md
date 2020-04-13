@@ -30,7 +30,7 @@ of tissue. These are normal cells which have undergone an oncogenic event, such 
 
 Despite this complexity, and the very distinct feature of different tumors (liquid, solid, sarcomas, carcinomas,..), a number of common cellular principles have been described, which can be identified in all cancer types; these are the so called **cancer hallmarks**.  A first description of 6 hallmarks was made by Hanahan and Weinberg in 2000, and updated and extended to four further characteristics by the same authors in 2011 (see references below).
 
-<img src="/img/hallmark_all.png" alt="Fig. 1 - Cancer hallmarks (adapted from Hanahan & Weinberg (2011))" width="500">
+<img src="/img/hallmark_all.png" alt="Fig. 1 - Cancer hallmarks (adapted from Hanahan & Weinberg (2011))" width="700">
 
 These hallmarks represent cellular mechanisms by which the tumor cells acquire a growth advantage over normal cells and evade cellular mechanisms, such as immune surveillance, meant to suppress cancer cells. On the other hand, various metabolic process are being altered in cancer cells to adapt the cell to the changed micro-environment. The best known example of such a metabolic changes is the [*Warburg-effect*](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4783224/), during which the cancer cell switch their energy production from an aerobe mode to an anaerobe-like mode, i.e. purely through glycolysis, even in the presence of oxygen ('aerobe glycolysis'). However, in recent years, additional examples of the importance of metabolic changes in cancer have been described.
 
