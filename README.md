@@ -18,7 +18,7 @@ Supervisor:
 -   Ashwini Sharma
     ([ashwini.sharma@bioquant.uni-heidelberg.de](mailto:ashwini.sharma@bioquant.uni-heidelberg.de))
 
-Tutor:
+Tutor: [Anton Hanke](mailto:anton.hanke@stud.uni-heidelberg.de)
 
 
 
