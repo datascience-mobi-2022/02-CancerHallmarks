@@ -16,7 +16,7 @@ Supervisor:
 -   Carl Herrmann
     ([carl.herrmann@uni-heidelberg.de](mailto:carl.herrmann@bioquant.uni-heidelberg.de))
 -   Ashwini Sharma
-    ([ashwini.sharma@uni-heidelberg.de](mailto:ashwini.sharma@bioquant.uni-heidelberg.de))
+    ([ashwini.sharma@bioquant.uni-heidelberg.de](mailto:ashwini.sharma@bioquant.uni-heidelberg.de))
 
 Tutor:
 
@@ -46,9 +46,10 @@ Objectives and workplan
 
 The objectives of your project are the following:
 
-(1) **Identify metabolic pathways**: select a number of cancer-relevant metabolic pathways which have been described in the literature, and collect the coresponding gene sets. For this, you can use the following databases:
+(1) **Identify cancer hallmark pathways**: we have provided a first list of genesets, which have been curated from the literature; check those and identify in the literature additional (for example metabolic pathways) that are relevant to cancer, and collect the coresponding gene sets. For this, you can use the following databases:
    * [MSigDB](https://www.gsea-msigdb.org/gsea/msigdb/): this is a very large collection of gene sets organized by categories; you can browse by keyword
    * [Gene Ontology](http://geneontology.org/): GO is a controlled vocabulary which describes all biological or molecular processed; you can query bey keyword, and then extract the genes which are annotated to this term (*make sure to select the right organism!*)
+   * [KEGG](https://www.genome.jp/kegg/pathway.html): Comprehensive database of biological pathways
    * [Pathway Commons](https://www.pathwaycommons.org/): this is a very large database of pathways from which gene sets can be obtained
 
 (2) **Compare gene sets**: make a comparison of the cancer hallmarks gene sets and the selected metabolic gene sets; how many shared genes are there between these gene sets?
@@ -71,7 +72,6 @@ The objectives of your project are the following:
 (5) **Predict activities using a regression model**: predict the activity of a metabolic pathway using the other hallmarks/metabolic pathways as explanatory variables
    * select one pathway of interest
    * can you build a linear regression model to determine the activity of this pathway from the other pathways? Make sure to take into account the analysis performed in (2) !
-
 
 All these analysis steps should be summarized in a R markdown document, with appropriate description and graphical outputs!
 
@@ -159,13 +159,28 @@ Literature review
 
 This list is meant as a **starting point** for your literature research; you should not restrict yourself to this list only!
 
-#### Reviews
+#### Reviews on general cancer biology and cancer metabolism
 
-Review regarding cancer metabolism
+- **Cancer biology -** Hanahan, Douglas, and Robert A. Weinberg. "Hallmarks of cancer: the next generation." cell 144, no. 5 (2011): 646-674. https://doi.org/10.1016/j.cell.2011.02.013
+- **Cancer metabolism -** De Berardinis, R. J., & Chandel, N. S. (2016). Fundamentals of cancer metabolism. Science      Advances, 2(5). https://doi.org/10.1126/sciadv.1600200
+- **Cancer metabolism -** Pavlova, Natalya N., and Craig B. Thompson. "The emerging hallmarks of cancer metabolism." Cell metabolism 23, no. 1 (2016): 27-47.https://doi.org/10.1016/j.cmet.2015.12.006
 
--   De Berardinis, R. J., & Chandel, N. S. (2016). Fundamentals of cancer metabolism. Science      Advances, 2(5). https://doi.org/10.1126/sciadv.1600200  
+#### Analysis of cancer hallmarks across muitiple cancer types using integrative approches
 
+- **Cancer immunology -** Thorsson, Vésteinn, David L. Gibbs, Scott D. Brown, Denise Wolf, Dante S. Bortone, Tai-Hsien Ou Yang, Eduard Porta-Pardo et al. "The immune landscape of cancer." Immunity 48, no. 4 (2018): 812-830. https://doi.org/10.1016/j.immuni.2018.03.023
+- **Cancer metabolism -** Peng, Xinxin, Zhongyuan Chen, Farshad Farshidfar, Xiaoyan Xu, Philip L. Lorenzi, Yumeng Wang, Feixiong Cheng et al. "Molecular characterization and clinical relevance of metabolic expression subtypes in human cancers." Cell reports 23, no. 1 (2018): 255-269. https://doi.org/10.1016/j.celrep.2018.03.077
+- **Cancer stemness/de-differenciation** Malta, Tathiane M., Artem Sokolov, Andrew J. Gentles, Tomasz Burzykowski, Laila Poisson, John N. Weinstein, Bożena Kamińska et al. "Machine learning identifies stemness features associated with oncogenic dedifferentiation." Cell 173, no. 2 (2018): 338-354. https://doi.org/10.1016/j.cell.2018.03.034
+- **DNA damage in cancer -** Knijnenburg, Theo A., Linghua Wang, Michael T. Zimmermann, Nyasha Chambwe, Galen F. Gao, Andrew D. Cherniack, Huihui Fan et al. "Genomic and molecular landscape of DNA damage repair deficiency across The Cancer Genome Atlas." Cell reports 23, no. 1 (2018): 239-254. https://doi.org/10.1016/j.celrep.2018.03.076
+- **RAS signalling Cancer -** Way, Gregory P., Francisco Sanchez-Vega, Konnor La, Joshua Armenia, Walid K. Chatila, Augustin Luna, Chris Sander et al. "Machine learning detects pan-cancer ras pathway activation in the cancer genome atlas." Cell reports 23, no. 1 (2018): 172-180. https://doi.org/10.1016/j.celrep.2018.03.046
 
+#### How to score pathways ?
+- Dugourd, Aurelien, and Julio Saez-Rodriguez. "Footprint-based functional analysis of multiomic data." Current Opinion in Systems Biology 15 (2019): 82-90. https://doi.org/10.1016/j.coisb.2019.04.002
+
+- Reimand, Jüri, Ruth Isserlin, Veronique Voisin, Mike Kucera, Christian Tannus-Lopes, Asha Rostamianfar, Lina Wadi et al. "Pathway enrichment analysis and visualization of omics data using g: Profiler, GSEA, Cytoscape and EnrichmentMap." Nature protocols 14, no. 2 (2019): 482-517. https://doi.org/10.1038/s41596-018-0103-9
+
+- Paczkowska, Marta, Jonathan Barenboim, Nardnisa Sintupisut, Natalie S. Fox, Helen Zhu, Diala Abd-Rabbo, Miles W. Mee, Paul C. Boutros, and Jüri Reimand. "Integrative pathway enrichment analysis of multivariate omics data." Nature communications 11, no. 1 (2020): 1-16. https://doi.org/10.1038/s41467-019-13983-9
+
+- Jia, Dongya, Mingyang Lu, Kwang Hwa Jung, Jun Hyoung Park, Linglin Yu, José N. Onuchic, Benny Abraham Kaipparettu, and Herbert Levine. "Elucidating cancer metabolic plasticity by coupling gene regulation with metabolic pathways." Proceedings of the National Academy of Sciences 116, no. 9 (2019): 3909-3918. https://doi.org/10.1073/pnas.1816391116
 
 How to structure your project
 -----------------------------
@@ -233,7 +248,4 @@ You have a high dimension matrix, that is, you have way more features
 
 #### Data modelling
 
-Imagine how you could try to **predict** sensitivity of cell lines to
-knockdown using other features as input. Test how well this might work.
-Alternatively, can you **predict** the impact of gene mutations or copy
-number alterations on the expression of that gene?
+Predict activities of some pathways using the activities of other pathways.
