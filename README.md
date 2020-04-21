@@ -57,18 +57,18 @@ The objectives of your project are the following:
    * display this comparison using a graphical representation
 
 
-(3) **Pan-cancer analysis**: determine the expression profiles of these gene sets across all TCGA tumor datasets, and determine patterns and clusters of tumor samples
+(3) **Perform a pan-cancer analysis**: determine the expression profiles of these gene sets across all TCGA tumor datasets, and determine patterns and clusters of tumor samples
    * a data frame of expression values for many cancer samples is provided (see dataset section); 
    * start with one pathway, and check the expression of the genes of this pathway compared to all genes for one sample; how could you summarize this into one number? This would represent the **activity** of this pathway in this sample 
    * compute the activities of all pathways for all samples, and display this in an appropriate way
    * how can you identify patterns and clusters of samples / pathways?
    * compare this with the clinical informations provided in the datasets
 
-(4) **Focused analysis**: perform a differential analysis for the select tumor type between normal tissue and tumor tissue
+(4) **Compare Tumor to normal tissue through a focused analysis**: perform a differential analysis for the select tumor type between normal tissue and tumor tissue
    * for the tumor type you selected, repeat a similar analysis as in (3) in tumor and normal samples
    * test which pathways have a significant different activity between the normal and tumor samples
 
-(5) **Modeling/prediction**: predict the activity of a metabolic pathway using the other hallmarks/metabolic pathways as explanatory variables
+(5) **Predict activities using a regression model**: predict the activity of a metabolic pathway using the other hallmarks/metabolic pathways as explanatory variables
    * select one pathway of interest
    * can you build a linear regression model to determine the activity of this pathway from the other pathways? Make sure to take into account the analysis performed in (2) !
 
@@ -78,9 +78,7 @@ All these analysis steps should be summarized in a R markdown document, with app
 Description of datasets
 -----------------------
 
-We have stored 3 datasets onto a public platform, figshare. These datasets represent
-
-
+We have stored 4 datasets onto a public platform, figshare. These datasets represent
 
 1. a data frame containing the **gene expression data from RNA-seq** for almost 10,000 TCGA cancer patients, representing 33 different tumor types; you can download the R-object `tcga_tumor_log2TPM.RDS` (beware, almost 1 Gb!) using this link: [https://figshare.com/s/3c2bf4d766181a17a2e0](https://figshare.com/s/3c2bf4d766181a17a2e0)
 
@@ -88,13 +86,15 @@ We have stored 3 datasets onto a public platform, figshare. These datasets repre
 
 3. a R object containing, for 5 tumor types, the expression data of matched tumor and normal tissue; you can download this object `tcga_tumor_normal_datascience_proj_2020.RDS` using this link
 
+4. a R object, containing a list of gene sets for the cancer hallmarks and additional pathways; you can download the object `hallmarks_genesets.rds` using this link [https://figshare.com/s/4f917a4f41e90027dd6f](https://figshare.com/s/4f917a4f41e90027dd6f)
 
-Once you have downloaded these 3 files, load them as below:
+Once you have downloaded these 4 files, load them as below (make sure to replace the `path/to/your/directory/` part with the path to the location on your computer where you have stored the files!):
 
 ``` {.r}
 tcga_exp = readRDS("path/to/your/directory/tcga_tumor_log2TPM.RDS")
 tcga_annot = readRDS("path/to/your/directory/tcga_tumor_annotation.RDS")
 tcga_tumor_norm = readRDS("path/to/your/directory/tcga_tumor_normal_datascience_proj_2020.RDS")
+genesets = readRDS("path/to/your/directory/hallmarks_genesets.rds")
 ```
 The first 2 objects are data frames
 
@@ -120,6 +120,38 @@ dim(luad.norm)
 [1] 19624    58
 dim(luad.annot)
 [1] 58 37
+```
+The last object is again a list
+```{.r}
+class(genesets)
+[1] "list"
+names(genesets)
+[1] "genesets"    "description"
+names(genesets$genesets)
+ [1] "Angio_AACR"             "Angio_ALL"              "Angio_VEGF"            
+ [4] "Angio_N_Reg"            "Angio_P_Reg"            "Apop_AACR"             
+ [7] "Apop_ALL"               "Apop_SURVIVAL"          "Genome_AACR"           
+[10] "Genome_DN_Reg"          "Genome_REPAIR"          "Growth_AACR"           
+[13] "Growth_ALL"             "Growth_CONTACT_Inh"     "Growth_Tumor_Supp"     
+[16] "Immune_AACR"            "Immune_ALL"             "Immune_UP"             
+[19] "Immune_DN"              "Immune_Ils"             "Inflam_AACR"           
+[22] "Inflam_PRO"             "Inflam_NEG"             "Meta_AACR"             
+[25] "Meta_Glc"               "Meta_Gln"               "Meta_Chol"             
+[28] "Meta_FA"                "Meta_HIF1"              "Metas_AACR"            
+[31] "Metas_ALL"              "Metas_EMT_MMP"          "Metas_NEG"             
+[34] "Metas_EMT"              "Prol_AACR"              "Prol_EGFR"             
+[37] "Prol_MAPK"              "Prol_PI3CK"             "Prol_NOTCH"            
+[40] "Prol_ERK"               "Prol_RAS"               "Prol_JAK_STAT"         
+[43] "Prol_MTOR"              "Prol_WNT"               "Replication_AACR"      
+[46] "Replication_Telomerase"
+## these are the first genes of the first geneset
+head(genesets$genesets[[1]])
+[1] "AAMP"   "ACTA2"  "ACVR1"  "ACVRL1" "ADGRG1" "ADM"   
+## the element description contains a description of the genesets
+head(genesets$description)
+[1] "na"                                  "all angiogenesis inducing genes"    
+[3] "VEGF pathway"                        "negative regulators of angiogenesis"
+[5] "positive regulators of angiogenesis" "na" 
 ```
 
 Literature review
