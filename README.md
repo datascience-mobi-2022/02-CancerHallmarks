@@ -41,6 +41,14 @@ The goal of this project is to perform a **pan-cancer analysis of these cancer h
 
 Hence, you will be conducting (1) a pan-cancer analysis to compare tumor types amongst themselves (similar to the other groups in the project), and (2) a cancer specific analysis to compare normal to cancer cells in this tumor type.
 
+The 5 sub-projects correspond to a different tumor type for the cancer specific analysis
+
+1. sub-project 1: BRCA = breast cancer; 
+2. sub-project 2: KIRC = kidney renal carcinoma; 
+3. sub-project 3: LUAD = lung adenocarcinoma;
+4. sub-prohect 4: PRAD = prostate adenocarcinoma; 
+5. sub-project 5: THCA = Thyroid carcinoma
+
 Objectives and workplan
 -----------------------
 
