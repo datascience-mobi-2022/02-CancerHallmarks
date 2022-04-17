@@ -1,4 +1,4 @@
-Project 01: Cancer Hallmark and Metabolic Pathways in Cancer
+Topic 02: Cancer Hallmark and Metabolic Pathways in Cancer
 ============================================================
 
 ### *Project overview and guidelines*
@@ -13,10 +13,9 @@ Project 01: Cancer Hallmark and Metabolic Pathways in Cancer
 
 Supervisor:
 
--   Carl Herrmann
+Carl Herrmann
     ([carl.herrmann@uni-heidelberg.de](mailto:carl.herrmann@bioquant.uni-heidelberg.de))
--   Ashwini Sharma
-    ([ashwini.sharma@bioquant.uni-heidelberg.de](mailto:ashwini.sharma@bioquant.uni-heidelberg.de))
+
 
 Tutor: [Anton Hanke](mailto:anton.hanke@stud.uni-heidelberg.de)
 
@@ -30,7 +29,7 @@ of tissue. These are normal cells which have undergone an oncogenic event, such 
 
 Despite this complexity, and the very distinct feature of different tumors (liquid, solid, sarcomas, carcinomas,..), a number of common cellular principles have been described, which can be identified in all cancer types; these are the so called **cancer hallmarks**.  A first description of 6 hallmarks was made by Hanahan and Weinberg in 2000, and updated and extended to four further characteristics by the same authors in 2011 (see references below).
 
-<img src="/img/hallmark_all.png" alt="Fig. 1 - Cancer hallmarks (adapted from Hanahan & Weinberg (2011))" width="700">
+<img src="hallmark_all.png" alt="Fig. 1 - Cancer hallmarks (adapted from Hanahan & Weinberg (2011))" width="700">
 
 These hallmarks represent cellular mechanisms by which the tumor cells acquire a growth advantage over normal cells and evade cellular mechanisms, such as immune surveillance, meant to suppress cancer cells. On the other hand, various metabolic process are being altered in cancer cells to adapt the cell to the changed micro-environment. The best known example of such a metabolic changes is the [*Warburg-effect*](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4783224/), during which the cancer cell switch their energy production from an aerobe mode to an anaerobe-like mode, i.e. purely through glycolysis, even in the presence of oxygen ('aerobe glycolysis'). However, in recent years, additional examples of the importance of metabolic changes in cancer have been described.
 
@@ -92,7 +91,7 @@ We have stored 4 datasets onto a public platform, figshare. These datasets repre
 
 2. a data frame with **37 clinical annotations** for all TCGA samples present in the full data matrix; you can download the R-object `tcga_tumor_annotation.RDS` using this link : [https://figshare.com/s/eed44ff6fdcf451cebd9](https://figshare.com/s/eed44ff6fdcf451cebd9)
 
-3. a R object containing, for 5 tumor types, the expression data of matched tumor and normal tissue; you can download this object `tcga_tumor_normal_datascience_proj_2020.RDS` using this link [https://figshare.com/s/23145e1183e27907ccef](https://figshare.com/s/23145e1183e27907ccef)
+3. a R object containing, for 5 tumor types, the expression data of matched tumor and normal tissue; you can download this object `tcga_tumor_normal_datascience_proj_2022.RDS` using this link [https://doi.org/10.6084/m9.figshare.19608252](https://doi.org/10.6084/m9.figshare.19608252)
 
 4. a R object, containing a list of gene sets for the cancer hallmarks and additional pathways; you can download the object `hallmarks_genesets.rds` using this link [https://figshare.com/s/4f917a4f41e90027dd6f](https://figshare.com/s/4f917a4f41e90027dd6f)
 
@@ -173,7 +172,7 @@ This list is meant as a **starting point** for your literature research; you sho
 - **Cancer metabolism -** De Berardinis, R. J., & Chandel, N. S. (2016). Fundamentals of cancer metabolism. Science      Advances, 2(5). https://doi.org/10.1126/sciadv.1600200
 - **Cancer metabolism -** Pavlova, Natalya N., and Craig B. Thompson. "The emerging hallmarks of cancer metabolism." Cell metabolism 23, no. 1 (2016): 27-47.https://doi.org/10.1016/j.cmet.2015.12.006
 
-#### Analysis of cancer hallmarks across muitiple cancer types using integrative approches
+#### Analysis of cancer hallmarks across multiple cancer types using integrative approches
 
 - **Cancer immunology -** Thorsson, Vésteinn, David L. Gibbs, Scott D. Brown, Denise Wolf, Dante S. Bortone, Tai-Hsien Ou Yang, Eduard Porta-Pardo et al. "The immune landscape of cancer." Immunity 48, no. 4 (2018): 812-830. https://doi.org/10.1016/j.immuni.2018.03.023
 - **Cancer metabolism -** Peng, Xinxin, Zhongyuan Chen, Farshad Farshidfar, Xiaoyan Xu, Philip L. Lorenzi, Yumeng Wang, Feixiong Cheng et al. "Molecular characterization and clinical relevance of metabolic expression subtypes in human cancers." Cell reports 23, no. 1 (2018): 255-269. https://doi.org/10.1016/j.celrep.2018.03.077
@@ -182,7 +181,6 @@ This list is meant as a **starting point** for your literature research; you sho
 - **RAS signalling Cancer -** Way, Gregory P., Francisco Sanchez-Vega, Konnor La, Joshua Armenia, Walid K. Chatila, Augustin Luna, Chris Sander et al. "Machine learning detects pan-cancer ras pathway activation in the cancer genome atlas." Cell reports 23, no. 1 (2018): 172-180. https://doi.org/10.1016/j.celrep.2018.03.046
 
 #### How to score pathways ?
-- Dugourd, Aurelien, and Julio Saez-Rodriguez. "Footprint-based functional analysis of multiomic data." Current Opinion in Systems Biology 15 (2019): 82-90. https://doi.org/10.1016/j.coisb.2019.04.002
 
 - Reimand, Jüri, Ruth Isserlin, Veronique Voisin, Mike Kucera, Christian Tannus-Lopes, Asha Rostamianfar, Lina Wadi et al. "Pathway enrichment analysis and visualization of omics data using g: Profiler, GSEA, Cytoscape and EnrichmentMap." Nature protocols 14, no. 2 (2019): 482-517. https://doi.org/10.1038/s41596-018-0103-9
 
